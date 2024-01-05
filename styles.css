@@ -130,3 +130,73 @@ body {
 
     }
 }
+
+
+/* Spoiler ------------------------------------ */
+
+.block {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    padding: 50px;
+    height: 100%;
+}
+
+.block__item {
+    margin: 0 0 20px 0;
+
+}
+
+.block__title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding: 0 0 0 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.block__title::before, 
+.block__title::after {
+  content: '';
+  width: 10px;
+  height: 1px;
+  background-color: #1F2F31;
+  position: absolute;
+  top: 15px;
+}
+
+.block__title::before {
+    transform: rotate(40deg);
+    left: 0;
+
+}
+
+.block__title::after {
+    transform: rotate(-40deg);
+    left: 8px;
+    
+}
+
+.block__title.active::before {
+    background-color: #94121d;
+    transform: rotate(-40deg);
+}
+
+.block__title.active::after {
+ background-color: #94121d;
+ transform: rotate(40deg);
+}
+
+.block__text {
+    padding: 10px 0 0 0;
+    text-transform: none;
+    font-weight: normal;
+    color: #1F2F31;
+
+    /* hide */
+    display: none;
+
+}
+
